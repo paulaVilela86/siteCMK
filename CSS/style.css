@@ -11,7 +11,7 @@ body{
     font-weight: 300px;
   }
   h2{
-    color: #2A0074;
+    color: #48877A;
     font-size: 40px;
   }
   h3{
@@ -50,9 +50,19 @@ body{
   }
   
   .principal{
-    background-color:#FF6CB5;
+    background-color:#C4BDA0;
     height: 40px;
     max-width: 60%;
+    margin: 0 auto;
+  }
+
+  .parteHistoria{
+    background-color:#48877A;
+    margin: 0 auto;
+  }
+
+  .parteEquipe{
+    background-color:#C4BDA0;
     margin: 0 auto;
   }
   
