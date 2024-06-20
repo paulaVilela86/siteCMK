@@ -5,4 +5,3 @@ luana- entrei
 OII, ENTREI :)
 Marcia - entrei s2
 Entrei - Nicoly
-Ane - Entrei!
