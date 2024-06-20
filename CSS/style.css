@@ -65,6 +65,11 @@ body{
     background-color:#C4BDA0;
     margin: 0 auto;
   }
+
+  .parteEventos{
+    background-color: #48877A;
+    margin-top: 10px;
+  }
   
   .principal li{
     display: inline-block;
