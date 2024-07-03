@@ -19,7 +19,7 @@
           <a href="#projetos">Projetos</a>
         </li>
         <li>
-          <a href='#inscricao'> Inscreva-se</a>
+          <a href="#" onclick="abrirPopupIncricao()"> Inscreva-se</a>
         </li>       
         <li>
           <a href="#eventos">Eventos</a>
@@ -102,28 +102,39 @@
   
          <img src="img/projetos.png" alt="Projetos CMK">
       </section>
-      <section id="inscricao">
-        <h3 class="titulo-menu">Para mais informações, clique aqui</h3>
-        <form>
-          <label for="nome responsável">Nome do responsável:</label>
-          <input id="nome" type="text">
-          <label for="telefone">Telefone:</label>  
-          <input id="telefone" type="text">
-          <label for="nome do aluno">Nome do aluno:</label>
-          <input id="nome do aluno" type="text">
-          <label for="projeto">Projeto:</label>
-          <select name="projeto" id="projeto">
-            <option value="jiujitasu">Jiu-jitsu</option>
-            <option value="pev">PEV</option>
-            <option value="code">CodeClub</option>
-          </select>
-         <button id="botaoEnviar">Enviar</button>
-        </form>
-        <p>Escreva aqui um paragrafo.</p>
-    
-        <p>Escreva aqui um paragrafo.</p>
-    
-      </section>
+      <div id="modal">
+        <section id="inscricao">
+          <div id="closeModal">
+            X
+          </div>
+          <h3 class="titulo-menu">Para mais informações, clique aqui</h3>
+          <form>
+            <fieldset>
+              <label for="nome responsável">Nome do responsável:</label>
+              <input id="nome" type="text">
+            </fieldset>
+            <fieldset>
+              <label for="telefone">Telefone:</label>  
+              <input id="telefone" type="text">
+            </fieldset>
+            <fieldset>
+              <label for="nome do aluno">Nome do aluno:</label>
+              <input id="nome do aluno" type="text">
+            </fieldset>
+            <fieldset>
+              <label for="projeto">Projeto:</label>
+              <select name="projeto" id="projeto">
+                <option value="jiujitasu">Jiu-jitsu</option>
+                <option value="pev">PEV</option>
+                <option value="code">CodeClub</option>
+              </select>
+            </fieldset>            
+          <button id="botaoEnviar">Enviar</button>
+          </form>
+      
+        </section>
+      </div>
+
     </section>
     
     <h3>Conheça nossos parceiros:</h3>
@@ -140,17 +151,16 @@
 
     <h4>Quer saber mais sobre nosso trabalho? Deixe seu telefone que manderemos um oi no whatsapp!</h4>
 
-    <form>
-      <label for="nome do responsável">Nome:</label>
-      <input id="nome do responsável" type="text">
-      <label for="telefone">Telefone:</label>  
-      <input id="telefone" type="text">
-      <button id="botaoEnviar">Enviar</button>
+      <form>
+        <label for="nome do responsável">Nome:</label>
+        <input id="nome do responsável" type="text">
+        <label for="telefone">Telefone:</label>  
+        <input id="telefone" type="text">
+        <button id="botaoEnviar">Enviar</button>
 
-    </form>
+      </form>
+   
     <script type="text/javascript" src="script.js"></script>
   </body>
 </html> 
-<!DOCTYPE html> 
-<title>formulario de inscrição de volutários</h2>
-  <label for=""
+ 
