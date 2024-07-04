@@ -19,11 +19,19 @@
           <a href="#projetos">Projetos</a>
         </li>
         <li>
-          <a href="#" onclick="abrirPopupIncricao()"> Inscreva-se</a>
+          <a href="#" onclick="abrirPopupIncricao()">Inscreva-se</a>
         </li>       
         <li>
           <a href="#eventos">Eventos</a>
-        </li>
+        </li>        
+        <li>
+          <a href="#" onclick="abrirPopupDoeAqui()">Doe aqui! ♥</a>
+        </li>         
+        <!--
+         <li>
+          <a href="#novaAba">Apadrinhamento</a>
+        </li>  
+        -->
       </ul>
     </nav>    
     <section>
@@ -111,6 +119,13 @@
           </div>
           <h3 class="titulo-menu">Para mais informações, clique aqui</h3>
           <form>
+            <fieldset>
+              <label for="tipoInscricao">Tipo da inscrição:</label>
+              <select name="tipoInscricao" id="tipoInscricao">
+                <option value="voluntario">Voluntário</option>
+                <option value="participante">Participante</option>
+              </select>
+            </fieldset>  
             <fieldset>
               <label for="nome responsável">Nome do responsável:</label>
               <input id="nome" type="text">

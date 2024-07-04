@@ -3,6 +3,11 @@ function abrirPopupIncricao(){
     popup.style.display="flex"
 }
 
+function abrirPopupDoeAqui(){
+    let popup = document.querySelector("#modal")
+    popup.style.display="flex"
+}
+
 let fundoModal = document.querySelector("#closeModal")
 fundoModal.addEventListener("click",()=> {
     let popup = document.querySelector("#modal")
