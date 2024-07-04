@@ -65,12 +65,10 @@ body{
     background-color:#C4BDA0;
     margin: 0 auto;
   }
-
   .parteEventos{
     background-color: #C4BDA0;
     margin-top: 10px;
   }
-  
   .principal li{
     display: inline-block;
     line-height: 2.5px;
