@@ -1,3 +1,54 @@
+body, margin, padding {
+  margin: 0;
+  padding: 0;
+}
+
+.barra {
+  background-color: rgb(211, 200, 164); /* Cor de fundo da barra */
+  position: fixed; /* Fixa a barra no topo */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45px; /* Altura da barra */
+  z-index: 1000; /* Garante que a barra fique sobre outros elementos */
+}
+
+main {
+  padding-top: 35px; /* Espaço para o conteúdo não ficar oculto atrás da barra fixa */
+}
+body, margin, padding {
+  margin: 0;
+  padding: 0;
+}
+
+.barra {
+  background-color: rgb(197, 182, 148); /* Cor de fundo da barra */
+  position: fixed; /* Fixa a barra no topo */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 35px; /* Altura da barra */
+  display: flex; /* Alinha os itens em linha */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: space-around; /* Espaça os itens igualmente */
+  z-index: 1000; /* Garante que a barra fique sobre outros elementos */
+}
+
+.icon {
+  color: white; /* Cor dos ícones */
+  font-size: 20px; /* Tamanho dos ícones */
+  text-decoration: none; /* Remove o sublinhado dos links */
+  margin: 0 10px; /* Espaçamento horizontal entre os ícones */
+}
+
+.icon:hover {
+  opacity: 0.8; /* Efeito ao passar o mouse sobre o ícone */
+}
+
+main {
+  padding-top: 35px; /* Espaço para o conteúdo não ficar oculto atrás da barra fixa */
+}
+
 body{
     text-align:center;
     font-family: open sans, sans-serif;
