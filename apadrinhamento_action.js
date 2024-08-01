@@ -30,9 +30,8 @@ async function enviaCadastro() {
 
     if(!ValidaFormulario()){
         alert("Falta preencher nome ou idade.");
+        return;
     }
-
-    console.log(fotoCrianca)
 
     var objeto = {
         nome: document.getElementById("nomeCrianca").value,
@@ -85,7 +84,6 @@ async function GetCriancasCadastradas(){
   .select()
 
   console.log(error)
-  console.log(data)
 
   data.forEach(element => {
     RenderCrianca(element)
