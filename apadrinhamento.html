@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cume do Monte Kids</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script defer="defer" type="text/javascript" src="apadrinhamento_action.js"></script>
+  </head>
+  <body>
+    <h1>Cume do Monte Kids</h1> 
+    <nav class="principal">
+      <ul>
+        <li>
+          <a href="#" onclick="abrirPopupIncricao()">Cadastre sua criança</a>
+        </li>
+        <li>
+          <a href="#" onclick="GetCriancasCadastradas()">Escolha uma criança</a>
+        </li>
+      </ul>
+    </nav>    
+
+    <div id="criancas">
+
+      <!-- <div class="crianca">
+        <div>
+          <img id="myImg" src="#" style="width:50px;height:50px;">    
+        </div>
+        <div>
+          <label for="nome">Nome:</label>
+          <label for="idade">Idade:</label>
+          <label for="roupa">Roupa:</label>
+          <label for="sapato">Sapato:</label>
+        </div>
+      </div> -->
+    </div>
+
+
+    <div id="modal">
+      <section id="inscricao">
+        <div id="closeModal">
+          X
+        </div>
+        <h3 class="titulo-menu">Cadastre sua criança para ela ser apadrinhada nesse natal!</h3>
+        <form>        
+        <fieldset>
+            <label for="nomeCrianca">Nome da criança:</label>
+            <input id="nomeCrianca" type="text">
+        </fieldset>
+        <fieldset>
+            <label for="idade">Idade:</label>  
+            <input id="idade" type="text">
+        </fieldset>
+        <fieldset>
+            <label for="tamanhoRoupa">Tamanho da roupa:</label>
+            <input id="tamanhoRoupa" type="text">
+        </fieldset>
+        <fieldset>
+            <label for="tamanhoSapato">Tamanho do sapato:</label>
+            <input id="tamanhoSapato" type="text">
+        </fieldset>
+        <fieldset>
+            <label for="uploadFoto">Faça upload de uma foto dela:</label>
+            <input type='file' />
+            <br><img id="myImg" src="#" style="width:72px;height:128px;">          
+        </fieldset>            
+        <button type="button" id="botaoCadastrarCrianca">Cadastrar</button>
+        </form>
+      </section>
+    </div>
+  </body>
+</html> 
+ 
