@@ -87,6 +87,11 @@ body{
     font-weight: 700;
   }
   
+   /*
+  .fixo{
+    position: fixed; Fixa a barra no topo
+  } */
+
   .principal a{
     color: #FFF;
     text-decoration: underline;
