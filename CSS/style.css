@@ -3,15 +3,6 @@ body, margin, padding {
   padding: 0;
 }
 
-.barra {
-  background-color: rgb(211, 200, 164); /* Cor de fundo da barra */
-  position: fixed; /* Fixa a barra no topo */
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 45px; /* Altura da barra */
-  z-index: 1000; /* Garante que a barra fique sobre outros elementos */
-}
 
 main {
   padding-top: 35px; /* Espaço para o conteúdo não ficar oculto atrás da barra fixa */
@@ -104,7 +95,6 @@ body{
   
   .principal{
     background-color:#C4BDA0;
-    position: fixed;
     height: 40px;
     max-width: 100%;
     margin: 0 auto;

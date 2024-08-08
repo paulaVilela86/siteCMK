@@ -49,6 +49,11 @@ async function enviaCadastro() {
 
    console.log(error)
 
+    let popup = document.querySelector("#modal")
+    popup.style.display="none"
+
+    GetCriancasCadastradas()
+    
     alert("Prontinho!");
 }
 
@@ -79,6 +84,8 @@ function getBase64(file) {
 
 
 async function GetCriancasCadastradas(){
+  document.querySelector("#criancas").innerHTML=""
+
   const { data, error } = await dbClient
   .from('apadrinhamento')
   .select()
