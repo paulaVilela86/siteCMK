@@ -1,11 +1,6 @@
-body, margin, padding {
-  margin: 0;
-  padding: 0;
-}
 
-
-main {
-  padding-top: 35px; /* Espaço para o conteúdo não ficar oculto atrás da barra fixa */
+corpo {
+  padding-top: 185px; /* Espaço para o conteúdo não ficar oculto atrás da barra fixa */
 }
 body, margin, padding {
   margin: 0;
@@ -36,10 +31,6 @@ body, margin, padding {
   opacity: 0.8; /* Efeito ao passar o mouse sobre o ícone */
 }
 
-main {
-  padding-top: 35px; /* Espaço para o conteúdo não ficar oculto atrás da barra fixa */
-}
-
 body{
     text-align:center;
     font-family: open sans, sans-serif;
@@ -51,7 +42,7 @@ body{
     align-items: center;
   }
   h1{
-    font-size: 60px;
+    font-size: 40px;
     font-weight: 300px;
   }
   h2{
@@ -65,15 +56,9 @@ body{
   .titulo-verde{
     color: #9f04ff;
   }
-  
-  .section-mae{
-    width: 50%;
-    max-width: 60%;
-    margin:0 auto;
-  }
-  
+    
   img{
-    width: 20%;
+    width: 10%;
   }
   
   ul{
@@ -97,32 +82,44 @@ body{
     text-decoration: underline;
     font-weight: normal;
   }
+  .principal b{
+    color: #FFF;
+    font-weight: bold;
+    font-size: large;
+  }
   
-  .principal{
-    background-color:#C4BDA0;
-    height: 40px;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-
-  .parteHistoria{
-    background-color:#48877A;
-    margin-top: 10px ;
-  }
-
-  .parteEquipe{
-    background-color:#C4BDA0;
-    margin: 0 auto;
-  }
-  .parteEventos{
-    background-color: #C4BDA0;
-    margin-top: 10px;
-  }
   .principal li{
     display: inline-block;
     line-height: 5px;
     margin: 0 50px;
     font-size: large;
+  }
+  .principal{
+    position: fixed; /* Fixa a barra no topo */
+    top: 35px;
+    left: 0;
+    right: 0;
+    background-color:#C4BDA0;
+    height: 150px;
+    max-width: 100%;
+    margin: 0 auto;
+    z-index: 1000; /* Garante que a barra fique sobre outros elementos */
+  }
+
+  .parteHistoria{
+    background-color:#48877A;
+    margin-top: 20px ;
+    padding-top: 185px;
+  }
+
+  .parteEquipe{
+    background-color:#C4BDA0;
+    margin-top: 20px;
+    padding-top: 185px;
+  }
+  .parteEventos{
+    background-color: #C4BDA0;
+    margin-top: 20px;
   }
 
   .crianca{
@@ -197,6 +194,7 @@ body{
 
 .slider{
     overflow: hidden;
+    margin-top: 20px ;
 
 }
 .slider > .slider-content{
