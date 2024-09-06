@@ -8,13 +8,18 @@ function abrirPopupDoeAqui(){
     popup.style.display="flex"
 }
 
-let fundoModal = document.querySelector("#closeModal")
-fundoModal.addEventListener("click",()=> {
-    let popup = document.querySelector("#modal")
-    popup.style.display="none"
-})
+// Fechar o modal clicando fora do #inscricao
+document.getElementById('modal').addEventListener('click', function(e) {
+    const inscricao = document.getElementById('inscricao');
+    if (!inscricao.contains(e.target)) {
+        fecharModal(); // Função para fechar o modal
+    }
+});
 
-
+// Função para fechar o modal
+function fecharModal() {
+    document.getElementById('modal').style.display = 'none';
+}
 
 
 document.getElementById("botaoInscricao").addEventListener("click",enviaCadastro)
