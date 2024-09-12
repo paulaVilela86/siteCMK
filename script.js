@@ -62,3 +62,72 @@ function enviaCadastro() {
 
     alert("Prontinho!");
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const searchBar = document.querySelector('.search_bar');
+    const searchButton = document.querySelector('#searchButton');
+
+    searchButton.addEventListener('click', function() {
+        searchBar.classList.toggle('expanded');
+        const input = searchBar.querySelector('input');
+        if (searchBar.classList.contains('expanded')) {
+            input.focus(); // Foca no campo de pesquisa quando expandido
+        }
+    });
+
+    // Fechar a barra de pesquisa quando clicar fora dela
+    document.addEventListener('click', function(event) {
+        if (!searchBar.contains(event.target) && searchBar.classList.contains('expanded')) {
+            searchBar.classList.remove('expanded');
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const searchButton = document.getElementById('searchButton');
+    const searchInput = document.getElementById('inputSearch');
+    
+    function highlightText(searchTerm) {
+      removeHighlights(); // Remove os destaques antigos
+      
+      if (searchTerm) {
+        const regex = new RegExp(`(${searchTerm})`, 'gi');
+        
+        // Função para percorrer e destacar o texto dos elementos
+        function traverseNodes(node) {
+          if (node.nodeType === 3) { // Node.TEXT_NODE
+            const parent = node.parentNode;
+            const matches = node.nodeValue.match(regex);
+            if (matches) {
+              const newHTML = node.nodeValue.replace(regex, `<span class="highlight">$1</span>`);
+              parent.innerHTML = newHTML;
+            }
+          } else if (node.nodeType === 1 && node.childNodes.length) { // Node.ELEMENT_NODE
+            node.childNodes.forEach(traverseNodes);
+          }
+        }
+
+        traverseNodes(document.body);
+      }
+    }
+
+    function removeHighlights() {
+      document.querySelectorAll('.highlight').forEach(highlight => {
+        const parent = highlight.parentNode;
+        parent.replaceChild(document.createTextNode(highlight.textContent), highlight);
+      });
+    }
+    
+    searchButton.addEventListener('click', function() {
+      const searchTerm = searchInput.value.trim();
+      highlightText(searchTerm);
+    });
+    
+    searchInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        const searchTerm = searchInput.value.trim();
+        highlightText(searchTerm);
+      }
+    });
+  });

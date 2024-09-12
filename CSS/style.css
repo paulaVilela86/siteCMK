@@ -22,17 +22,25 @@ display: flex;
 align-items: center;
 background-color:#fff;
 border-radius: 30px;
-min-width: 50px;
-height: 50px;
+min-width: 30px;
+height: 30px;
 overflow: hidden;
+transition: width 0.3s ease-in-out;
+cursor: pointer; /* Adiciona um cursor pointer para indicar que é clicável */
 }
 .search_bar input{
 border: 0;
 outline: 0;
 background-color: transparent;
-width: 50px;
+width: 0; /* Inicialmente escondido */
 font-size: 1rem;
-transition: width .2s ease-in-out;
+opacity: 0; /* Invisível inicialmente */
+transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.search_bar.expanded input {
+  width: 200px; /* Largura expandida quando ativo */
+  opacity: 1; /* Torna o input visível */
 }
 
 .icon {
@@ -40,10 +48,32 @@ transition: width .2s ease-in-out;
   font-size: 20px; /* Tamanho dos ícones */
   text-decoration: none; /* Remove o sublinhado dos links */
   margin: 0 10px; /* Espaçamento horizontal entre os ícones */
+  transition: color 0.3s ease;
 }
 
-.icon:hover {
-  opacity: 0.8; /* Efeito ao passar o mouse sobre o ícone */
+.search_bar .icon:hover {
+  color: #555; /* Cor do ícone ao passar o mouse */
+}
+
+#searchButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.highlight {
+  background-color: yellow; /* Cor de destaque */
+  color: black; /* Cor do texto destacado */
+  font-weight: bold; /* Opcional: destaque em negrito */
+}
+
+.ong-name {
+  display: block;
+  margin-top: 0px; /* Espaço entre o logo e o nome */
+  font-size: 25px; /* Tamanho da fonte */
+  font-weight: bold; /* Destaque do texto */
+  color: #000000; /* Cor do texto */
 }
 
 body{
@@ -127,10 +157,15 @@ body{
   font-size: large;
 }
 
+/* Media Query para telas pequenas */
 @media (max-width: 768px) {
+  .principal ul {
+    flex-direction: column; /* Alinha os itens verticalmente em telas pequenas */
+  }
+
   .principal li {
-      display: block;
-      margin: 10px 0;
+    display: block;
+    margin: 10px 0;
   }
 }
 
