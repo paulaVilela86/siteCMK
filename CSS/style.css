@@ -49,6 +49,26 @@ transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
   text-decoration: none; /* Remove o sublinhado dos links */
   margin: 0 10px; /* Espaçamento horizontal entre os ícones */
   transition: color 0.3s ease;
+  position: relative; /* Para posicionar o tooltip corretamente */
+}
+
+.tooltip {
+  display: none; /* Inicialmente oculto */
+  position: absolute;
+  top: 100%; /* Coloca o tooltip acima do ícone */
+  left: 50%;
+  font-size: 12px;
+  transform: translateX(-50%);
+  background-color: #00283d; /* Cor de fundo do tooltip */
+  color: #fff; /* Cor do texto */
+  padding: 5px;
+  border-radius: 4px;
+  white-space: nowrap; /* Para evitar que o texto quebre em várias linhas */
+  z-index: 1000; /* Para garantir que fique acima de outros elementos */
+}
+
+.icon:hover .tooltip {
+  display: block; /* Mostra o tooltip ao passar o mouse */
 }
 
 .search_bar .icon:hover {
