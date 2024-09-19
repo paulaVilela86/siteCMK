@@ -131,3 +131,10 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   });
+
+  function enviarWhatsApp() {
+    const numero = '5521974096726'; // Substitua pelo número de telefone
+    const mensagem = 'Olá, gostaria de saber mais sobre...'; // Mensagem que deseja enviar
+    const url = `https://wa.me/${5521974096726}?text=${encodeURIComponent('Olá,gostaria de saber mais sobre...')}`;
+    window.open(url, '_blank');
+}
