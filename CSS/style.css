@@ -54,7 +54,7 @@ body{
     margin-bottom: 30px;    
     max-width: 80%;
     align-items: center;    
-    background: linear-gradient(210deg,#00283d, #000508);
+    background: linear-gradient(210deg,#155821e8, #6bbc95cb);
     font-family: 'poppins', sans-serif;    
     padding: 0;
     /*font-family: open sans, sans-serif;    
@@ -305,6 +305,6 @@ button#botaoInscricao:hover {
 /*.slider > input:nth-child(4):checked ~ .slider-content{
     transform: translateX(-300%);
 }*/
- 
+
 
  
