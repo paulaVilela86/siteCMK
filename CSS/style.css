@@ -260,6 +260,20 @@ body{
     z-index: 2000; /* Para garantir que o modal fique no topo */
   }
 
+  
+  #modalDoeAqui{
+    background-color: rgba(32, 88, 56, 0.8);
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000; /* Para garantir que o modal fique no topo */
+  }
+
   #inscricao {
     background-color: hsl(165, 74%, 31%);
     display: flex;

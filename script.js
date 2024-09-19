@@ -4,7 +4,7 @@ function abrirPopupIncricao(){
 }
 
 function abrirPopupDoeAqui(){
-    let popup = document.querySelector("#modal")
+    let popup = document.querySelector("#modalDoeAqui")
     popup.style.display="flex"
 }
 
@@ -16,9 +16,17 @@ document.getElementById('modal').addEventListener('click', function(e) {
     }
 });
 
+document.getElementById('modalDoeAqui').addEventListener('click', function(e) {
+  const inscricao = document.getElementById('doeAqui');
+  if (!inscricao.contains(e.target)) {
+      fecharModal(); // Função para fechar o modal
+  }
+});
+
 // Função para fechar o modal
 function fecharModal() {
     document.getElementById('modal').style.display = 'none';
+    document.getElementById('modalDoeAqui').style.display = 'none';
 }
 
 
