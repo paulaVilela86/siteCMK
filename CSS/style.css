@@ -127,7 +127,7 @@ body{
     color: #9f04ff;
   }
     
-  img {
+  .imagens_projeto {
     width: 100%; /* Tornando as imagens responsivas */
     max-width: 300px; /* Limita a largura máxima */
     height: auto; /* Mantém a proporção */
@@ -375,5 +375,8 @@ button#botaoInscricao:hover {
     transform: translateX(-300%);
 }*/
  
-
+.slider_img {
+  height: 200px;
+  width: 100%;
+}
  

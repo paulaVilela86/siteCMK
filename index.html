@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -40,7 +41,23 @@
       </nav>
     </header>
 
+  
+
     <div class="corpo">
+
+      <div class="splide" role="group" aria-label="Splide Basic HTML Example">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide" data-splide-interval="1000">
+              <img class="slider_img" src="./img/cmk1.jpg" alt="">
+              <p>teste</p>
+            </li>
+            <li class="splide__slide" data-splide-interval="10000">Slide 02</li>
+            <li class="splide__slide">Slide 03</li>
+          </ul>
+        </div>
+      </div>
+
       <section id="missaoVisaoValores" class="parteHistoria">
         <h3>Missão, visão e valores</h3>
 
@@ -66,8 +83,8 @@
 
       <div class="slider-content">
         <div class="slider-item">
-          <img src="img/cmk1.jpg" alt="fotojiujitsu">
-          <img src="img/cmk2.jpg" alt="fotojiujitsuadulto">
+          <img class="imagens_projeto" src="img/cmk1.jpg" alt="fotojiujitsu">
+          <img class="imagens_projeto" src="img/cmk2.jpg" alt="fotojiujitsuadulto">
           <h3>Jiu-Jitsu</h3>
           <p>O Jiu-Jitsu transcende a arte marcial; é um estilo de vida que fortalece o corpo, promove disciplina e autoconfiança. 
             Para além dos benefícios físicos, ele une uma comunidade global com valores fundamentais como respeito e superação. 
@@ -79,8 +96,8 @@
         </div>
 
         <div class="slider-item">
-          <img src="img/code2.jfif" alt="foto code2">
-          <img src="img/code3.jfif" alt="foto code2">
+          <img class="imagens_projeto" src="img/code2.jfif" alt="foto code2">
+          <img class="imagens_projeto" src="img/code3.jfif" alt="foto code2">
           <h3>Code Club</h3>
           <p>O Code Club é um espaço divertido e educativo onde crianças exploram programação de forma criativa. 
             Através de atividades semanais, elas aprendem a desenvolver jogos, aplicativos e projetos interativos, estimulando não apenas habilidades técnicas,
@@ -91,8 +108,8 @@
         </div>
 
         <div class="slider-item">
-          <img src="img/pevi.jfif" alt="foto turma PEVI">
-          <img src="img/pevi1.jfif" alt="foto PEVI">
+          <img class="imagens_projeto" src="img/pevi.jfif" alt="foto turma PEVI">
+          <img class="imagens_projeto" src="img/pevi1.jfif" alt="foto PEVI">
           <h3>PEVI </h3>
           <p>O PEVI (Programa Ensino para a Vida) é uma iniciativa educacional centrada no ensino e na aplicação dos princípios cristãos na vida cotidiana. 
             Com aulas semanais, o PEVi oferece suporte acadêmico e pessoal, promovendo valores cristãos como amor, compaixão e serviço aos outros. 
@@ -103,8 +120,8 @@
         </div>
 
         <div class="slider-item">
-          <img src="img/culto.jfif" alt="foto do culto">
-          <img src="img/culto2.jfif" alt="foto do culto2 ">
+          <img class="imagens_projeto" src="img/culto.jfif" alt="foto do culto">
+          <img class="imagens_projeto" src="img/culto2.jfif" alt="foto do culto2 ">
            <h3>Culto</h3>
           <p>No culto de domingo, temos atividades para todas as idades, começando com um estudo bíblico para adultos das 9h às 10h. Em seguida, das 10h às 12h, as crianças participam de seu próprio estudo bíblico. À tarde, das 17h às 19h, é o culto infantil, seguido pelo culto para adultos das 19:30h às 21h. Nosso objetivo é fortalecer nossa fé e compartilhar o amor de Deus em uma comunidade acolhedora e unida.</h4>
           <p>Dias e horários: Domingo</p>
@@ -197,6 +214,14 @@
     </div>
    
     <script type="text/javascript" src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+      new Splide( '.splide', {
+        type:'loop',
+        perPage: 1,
+        autoplay: true
+      } ).mount();
+    </script>
   </body>
 </html>
  
