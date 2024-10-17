@@ -3,9 +3,25 @@ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 const dbClient = supabase.createClient(supabaseUrl, supabaseKey)
 let fotoCrianca = ""
 
+window.onload = function() {
+  // Chama o método para carregar as crianças quando a página for carregada
+  GetCriancasCadastradas();
+};
+
 function abrirPopupIncricao(){
-  let popup = document.querySelector("#modal")
-  popup.style.display="flex"
+  // Senha hardcoded
+  const senhaCorreta = "@p@drinh@mentoCMK";  // Substitua pela senha desejada
+
+  // Solicitar a senha ao usuário
+  let senhaDigitada = prompt("Digite a senha para acessar o cadastro:");
+
+  // Verifica se a senha está correta
+  if (senhaDigitada === senhaCorreta) {
+    let modal = document.querySelector("#modal");
+    modal.style.display = "flex"; // Exibe o modal
+  } else {
+    alert("Senha incorreta!");  // Exibe um alerta se a senha estiver errada
+  }
 }
 
 let fundoModal = document.querySelector("#closeModal")
@@ -26,6 +42,7 @@ function ValidaFormulario(){
   }
 }
 
+
 async function enviaCadastro() {
 
     if(!ValidaFormulario()){
@@ -38,6 +55,7 @@ async function enviaCadastro() {
         idade: document.getElementById("idade").value,
         tamanhoRoupa: document.getElementById("tamanhoRoupa").value,
         tamanhoSapato: document.getElementById("tamanhoSapato").value,
+        padrinho: document.getElementById("padrinho").value,
         foto: fotoCrianca,
     }
 
@@ -98,28 +116,89 @@ async function GetCriancasCadastradas(){
 }
 
 function RenderCrianca(item){
-  const template = `
-      <div class="crianca">
-        <div>
-          <img id="foto" src="${item.foto}" style="width:72px;height:128px;">    
+  var template = `
+          <div class="crianca">
+            <div>
+              <img id="foto" src="${item.foto}" style="width:72px;height:128px;">    
+            </div>
+            <div>
+              <fieldset>
+                <p for="nome">Nome: ${item.nome}</p>
+              </fieldset>
+              <fieldset>
+                <p for="idade">Idade: ${item.idade}</p>
+              </fieldset>
+              <fieldset>
+                <p for="roupa">Roupa: ${item.tamanhoRoupa}</p>
+              </fieldset>
+              <fieldset>
+                <p for="sapato">Sapato: ${item.tamanhoSapato}</p>
+              </fieldset>`;
+
+      if(item.padrinho == undefined)
+      {
+        template += `
+              <fieldset>
+                <button id="botaoApadrinhar" onclick="abrirModalApadrinhamento('${item.id}')">Apadrinhar</button>
+              </fieldset>`;
+      }
+     
+      template += `
         </div>
-        <div>
-          <fieldset>
-            <p for="nome">Nome: ${item.nome}</p>
-          </fieldset>
-          <fieldset>
-            <p for="idade">Idade: ${item.idade}</p>
-          </fieldset>
-          <fieldset>
-            <p for="roupa">Roupa: ${item.tamanhoRoupa}</p>
-          </fieldset>
-          <fieldset>
-            <p for="sapato">Sapato: ${item.tamanhoSapato}</p>
-          </fieldset>
-        </div>
-      </div>`;
+      </div> `;
+
 
   let criancas = document.querySelector("#criancas");
   criancas.innerHTML+=template;
 
+}
+
+let idCriancaSelecionada = null; // Variável global para armazenar o ID da criança selecionada
+
+function abrirModalApadrinhamento(idCrianca) {
+  idCriancaSelecionada = parseInt(idCrianca); // Armazena o ID da criança
+  let modal = document.querySelector("#modalApadrinhamento");
+  modal.style.display = "flex";
+}
+
+// Fechar o modal de apadrinhamento
+let fecharModalApadrinhamento = document.querySelector("#closeModalApadrinhamento");
+fecharModalApadrinhamento.addEventListener("click", () => {
+  let modal = document.querySelector("#modalApadrinhamento");
+  modal.style.display = "none";
+});
+
+async function enviarApadrinhamento() {
+  let nomePadrinho = document.getElementById("nomePadrinho").value;
+
+  if (!nomePadrinho) {
+    alert("Por favor, insira seu nome.");
+    return;
+  }
+
+  console.log({ padrinho: nomePadrinho, id: idCriancaSelecionada})
+
+  // Atualiza o registro no banco de dados
+  const { error } = await dbClient
+    .from('apadrinhamento')
+    .update({ padrinho: nomePadrinho })
+    .eq('id', idCriancaSelecionada); // Utiliza o ID da criança armazenado
+
+  if (error) {
+    console.error("Erro ao apadrinhar a criança:", error);
+  } else {
+    alert("Obrigado por apadrinhar uma criança!");
+    let modal = document.querySelector("#modalApadrinhamento");
+    modal.style.display = "none";
+    
+    // Atualiza a lista de crianças
+    GetCriancasCadastradas();
+  }
+}
+
+function enviarWhatsApp() {
+  const numero = '5521974096726'; // Substitua pelo número de telefone
+  const mensagem = 'Olá, gostaria de saber mais sobre...'; // Mensagem que deseja enviar
+  const url = `https://wa.me/${5521974096726}?text=${encodeURIComponent('Olá,gostaria de saber mais sobre...')}`;
+  window.open(url, '_blank');
 }
