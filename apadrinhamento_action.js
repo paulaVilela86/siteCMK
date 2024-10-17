@@ -73,10 +73,7 @@ async function enviaCadastro() {
 
    console.log(error)
 
-    let popup = document.querySelector("#modal")
-    popup.style.display="none"
-
-    GetCriancasCadastradas()
+   
     
     alert("Prontinho!");
 }
