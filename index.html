@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   </head>
   <body>
     <header>
@@ -44,7 +45,7 @@
   
 
     <div class="corpo">
-
+<!--
       <div class="splide" role="group" aria-label="Splide Basic HTML Example">
         <div class="splide__track">
           <ul class="splide__list">
@@ -57,7 +58,7 @@
           </ul>
         </div>
       </div>
-
+-->
       <section id="missaoVisaoValores" class="parteHistoria">
         <h3>Missão, visão e valores</h3>
 
@@ -169,7 +170,7 @@
       </div>
 
 
-    <img src="img/projetos.png" alt="Projetos CMK"> 
+    <!--<img src="img/projetos.png" alt="Projetos CMK"> -->
     
     
     <h3>Conheça nossos parceiros:</h3>
@@ -197,7 +198,7 @@
     
       
     
-    <div id="modal" class="meu-modal">
+    <div id="modal" class="meu-modal"  style="display:none;">
       <section id="inscricao">
         <h3 class="titulo-menu">Para mais informações, clique aqui</h3>
         <form>
@@ -234,7 +235,10 @@
         </form>
       </section>
     </div>
-   
+  
+    <script type="text/javascript" src="script.js"></script>
+
+    <!--
     <script type="text/javascript" src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script>
@@ -245,16 +249,15 @@
       } ).mount();
     </script>
 
-<script type="text/javascript" src="script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-<script>
-  new Splide( '.splide', {
-    type:'loop',
-    perPage: 1,
-    autoplay: true
-  } ).mount();
-</script>
-
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+      new Splide( '.splide', {
+        type:'loop',
+        perPage: 1,
+        autoplay: true
+      } ).mount();
+    </script>
+   -->
   </body>
 </html>
  

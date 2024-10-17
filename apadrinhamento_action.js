@@ -50,12 +50,18 @@ async function enviaCadastro() {
         return;
     }
 
+    let nomePadrinho = document.getElementById("padrinho").value
+    if(nomePadrinho == "")
+    {
+      nomePadrinho = undefined
+    }
+
     var objeto = {
         nome: document.getElementById("nomeCrianca").value,
         idade: document.getElementById("idade").value,
         tamanhoRoupa: document.getElementById("tamanhoRoupa").value,
         tamanhoSapato: document.getElementById("tamanhoSapato").value,
-        padrinho: document.getElementById("padrinho").value,
+        padrinho: nomePadrinho,
         foto: fotoCrianca,
     }
 
@@ -170,6 +176,7 @@ fecharModalApadrinhamento.addEventListener("click", () => {
 
 async function enviarApadrinhamento() {
   let nomePadrinho = document.getElementById("nomePadrinho").value;
+  let telefonePadrinho = document.getElementById("telefonePadrinho").value;
 
   if (!nomePadrinho) {
     alert("Por favor, insira seu nome.");
@@ -181,7 +188,7 @@ async function enviarApadrinhamento() {
   // Atualiza o registro no banco de dados
   const { error } = await dbClient
     .from('apadrinhamento')
-    .update({ padrinho: nomePadrinho })
+    .update({ padrinho: nomePadrinho, telefone_padrinho: telefonePadrinho })
     .eq('id', idCriancaSelecionada); // Utiliza o ID da criança armazenado
 
   if (error) {

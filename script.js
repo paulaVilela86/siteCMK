@@ -1,3 +1,8 @@
+const supabaseUrl = 'https://hgkpreqzpcvuukrbuiys.supabase.co'
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhna3ByZXF6cGN2dXVrcmJ1aXlzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjE5MDg0MTIsImV4cCI6MjAzNzQ4NDQxMn0.8dWfWxBU2tRq0L_yXtDaZCdC5qbl-AOefGFNZUxgAHU'
+const dbClient = supabase.createClient(supabaseUrl, supabaseKey)
+
+
 function abrirPopupIncricao(){
     let popup = document.querySelector("#modal")
     popup.style.display="flex"
@@ -42,32 +47,28 @@ function ValidaFormulario(){
 }
 
 
-function enviaCadastro() {
+async function enviaCadastro() {
     console.log('entrou no envio do cadastro.');
     if(!ValidaFormulario()){
         alert("Falta preencher nome ou telefone.");
     }
 
-    if(document.getElementById("tipoInscricao").value == "voluntario")
-    {
-        var objeto = {
-            nome: document.getElementById("nomeResponsavel").value,
-            telefone: document.getElementById("telefone").value,
-            projeto: document.getElementById("projeto").value
-        }
-        console.log('isncrição = voluntario');
-        console.log(objeto);
-
-        const fs = require('fs');
-
-        fs.writeFile('voluntarios.txt', objeto, (err) => {
-            if (err) {
-                console.log("erro");
-                throw err;
-            }
-        });
+    var objeto = {
+      tipoinscricao:document.getElementById("tipoInscricao").value,
+        nomeResponsavel: document.getElementById("nomeResponsavel").value,
+        nomeCrianca:document.getElementById("nomeAluno").value,
+        telefone: document.getElementById("telefone").value,
+        projeto: document.getElementById("projeto").value
     }
 
+    console.log(objeto)
+
+    const { error } = await dbClient
+    .from('inscricoes')
+    .insert(objeto)
+
+    console.log(error)
+    
     alert("Prontinho!");
 }
 
