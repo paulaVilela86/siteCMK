@@ -4,6 +4,16 @@ const dbClient = supabase.createClient(supabaseUrl, supabaseKey)
 
 
 document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('botaoEnviar').addEventListener('click', function() {
+    const phoneNumber = '5521999009993'; // Substitua pelo número de telefone no formato internacional
+    const nome = document.getElementById('nome').value;
+    const telefone = document.getElementById('telefone').value;
+    const message = `Olá, meu nome é ${nome}. Meu telefone é ${telefone}. Estou interessado em saber mais!`;
+    const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+
+    window.open(url, '_blank');
+});
+
   // Fechar o modal clicando fora do #inscricao
   document.getElementById('modal').addEventListener('click', function(e) {
     const inscricao = document.getElementById('inscricao');
